@@ -12,6 +12,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main)
         setCard1()
         setCard2()
+        setCard3()
+        setCard4()
     }
     //////////////
 
@@ -38,6 +40,32 @@ class MainActivity : AppCompatActivity() {
         //Reproducción de sonido cuando se presiona CV
         sound2CV.setOnClickListener{
             mediaPlayer2?.start()
+        }
+    }
+
+    private fun setCard3(){
+        //Declarar MediaPlayer
+        var mediaPlayer3: MediaPlayer? = MediaPlayer.create(this, R.raw.thexfiles)
+        //Declaración de elementos
+        val sound2CV : CardView = findViewById(R.id.sound3)
+        //Ajustar background
+        sound2CV.setBackgroundResource(R.drawable.thexfiles)
+        //Reproducción de sonido cuando se presiona CV
+        sound2CV.setOnClickListener{
+            mediaPlayer3?.start()
+        }
+    }
+
+    private fun setCard4(){
+        //Declarar MediaPlayer
+        var mediaPlayer4: MediaPlayer? = MediaPlayer.create(this, R.raw.jarabetapatio)
+        //Declaración de elementos
+        val sound2CV : CardView = findViewById(R.id.sound4)
+        //Ajustar background
+        sound2CV.setBackgroundResource(R.drawable.bandera)
+        //Reproducción de sonido cuando se presiona CV
+        sound2CV.setOnClickListener{
+            mediaPlayer4?.start()
         }
     }
 
