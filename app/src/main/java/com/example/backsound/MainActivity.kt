@@ -30,11 +30,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun setCard2(){
         //Declarar MediaPlayer
-        var mp = MediaPlayer()
+        var mediaPlayer2: MediaPlayer? = MediaPlayer.create(this, R.raw.desaparecer)
         //Declaración de elementos
         val sound2CV : CardView = findViewById(R.id.sound2)
         //Ajustar background
         sound2CV.setBackgroundResource(R.drawable.desaparecer)
+        //Reproducción de sonido cuando se presiona CV
+        sound2CV.setOnClickListener{
+            mediaPlayer2?.start()
+        }
     }
 
     /////////////
