@@ -26,7 +26,13 @@ class MainActivity : AppCompatActivity() {
         sound1CV.setBackgroundResource(R.drawable.necoarc)
         //Reproducción de sonido cuando se presiona CV
         sound1CV.setOnClickListener{
-            mediaPlayer1?.start()
+            if (mediaPlayer1!!.isPlaying){
+                mediaPlayer1?.pause()
+                mediaPlayer1?.seekTo(0)
+            }
+            else{
+                mediaPlayer1?.start()
+            }
         }
     }
 
@@ -39,7 +45,13 @@ class MainActivity : AppCompatActivity() {
         sound2CV.setBackgroundResource(R.drawable.desaparecer)
         //Reproducción de sonido cuando se presiona CV
         sound2CV.setOnClickListener{
-            mediaPlayer2?.start()
+            if (mediaPlayer2!!.isPlaying){
+                mediaPlayer2?.pause()
+                mediaPlayer2?.seekTo(0)
+            }
+            else{
+                mediaPlayer2?.start()
+            }
         }
     }
 
@@ -47,12 +59,19 @@ class MainActivity : AppCompatActivity() {
         //Declarar MediaPlayer
         var mediaPlayer3: MediaPlayer? = MediaPlayer.create(this, R.raw.thexfiles)
         //Declaración de elementos
-        val sound2CV : CardView = findViewById(R.id.sound3)
+        val sound3CV : CardView = findViewById(R.id.sound3)
         //Ajustar background
-        sound2CV.setBackgroundResource(R.drawable.thexfiles)
+        sound3CV.setBackgroundResource(R.drawable.thexfiles)
         //Reproducción de sonido cuando se presiona CV
-        sound2CV.setOnClickListener{
-            mediaPlayer3?.start()
+        //Reproducción de sonido cuando se presiona CV
+        sound3CV.setOnClickListener{
+            if (mediaPlayer3!!.isPlaying){
+                mediaPlayer3?.pause()
+                mediaPlayer3?.seekTo(0)
+            }
+            else{
+                mediaPlayer3?.start()
+            }
         }
     }
 
@@ -60,11 +79,11 @@ class MainActivity : AppCompatActivity() {
         //Declarar MediaPlayer
         var mediaPlayer4: MediaPlayer? = MediaPlayer.create(this, R.raw.jarabetapatio)
         //Declaración de elementos
-        val sound2CV : CardView = findViewById(R.id.sound4)
+        val sound4CV : CardView = findViewById(R.id.sound4)
         //Ajustar background
-        sound2CV.setBackgroundResource(R.drawable.bandera)
+        sound4CV.setBackgroundResource(R.drawable.bandera)
         //Reproducción de sonido cuando se presiona CV
-        sound2CV.setOnClickListener{
+        sound4CV.setOnClickListener{
             if (mediaPlayer4!!.isPlaying){
                 mediaPlayer4?.pause()
                 mediaPlayer4?.seekTo(0)
