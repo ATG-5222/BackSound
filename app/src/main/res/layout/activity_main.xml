@@ -81,12 +81,22 @@
                     <LinearLayout
                         android:id="@+id/sound1ll2"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="80dp"
                         android:background="@color/lightGray"
                         android:gravity="bottom"
                         android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/sound1Tittle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Necoarc"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -119,12 +129,22 @@
                     <LinearLayout
                         android:id="@+id/sound2ll2"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="80dp"
                         android:background="@color/lightGray"
                         android:gravity="bottom"
                         android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/sound2Tittle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Desaparecer"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
