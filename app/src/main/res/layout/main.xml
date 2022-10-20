@@ -215,7 +215,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Jaraba Tapatio"
+                            android:text="Jarabe Tapatio"
                             android:textStyle="bold"
                             android:textAlignment="center"
                             android:textColor="@color/black"

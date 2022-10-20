@@ -65,7 +65,13 @@ class MainActivity : AppCompatActivity() {
         sound2CV.setBackgroundResource(R.drawable.bandera)
         //Reproducción de sonido cuando se presiona CV
         sound2CV.setOnClickListener{
-            mediaPlayer4?.start()
+            if (mediaPlayer4!!.isPlaying){
+                mediaPlayer4?.pause()
+                mediaPlayer4?.seekTo(0)
+            }
+            else{
+                mediaPlayer4?.start()
+            }
         }
     }
 
