@@ -1,9 +1,9 @@
 package com.example.backsound
 
 import android.media.MediaPlayer
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import androidx.cardview.widget.CardView
 
 class MainActivity : AppCompatActivity() {
@@ -17,11 +17,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun setCard1(){
         //Declarar MediaPlayer
-        var mp = MediaPlayer()
+        var mediaPlayer1: MediaPlayer? = MediaPlayer.create(this, R.raw.necoarc)
         //Declaración de elementos
         val sound1CV : CardView = findViewById(R.id.sound1)
         //Ajustar background
         sound1CV.setBackgroundResource(R.drawable.necoarc)
+        //Reproducción de sonido cuando se presiona CV
+        sound1CV.setOnClickListener{
+            mediaPlayer1?.start()
+        }
     }
 
     private fun setCard2(){
