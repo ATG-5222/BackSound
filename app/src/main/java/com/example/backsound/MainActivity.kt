@@ -14,6 +14,8 @@ class MainActivity : AppCompatActivity() {
         setCard2()
         setCard3()
         setCard4()
+        setCard5()
+        setCard6()
     }
     //////////////
 
@@ -90,6 +92,45 @@ class MainActivity : AppCompatActivity() {
             }
             else{
                 mediaPlayer4?.start()
+            }
+        }
+    }
+
+    private fun setCard5(){
+        //Declarar MediaPlayer
+        var mediaPlayer5: MediaPlayer? = MediaPlayer.create(this, R.raw.kirbyconchetumadre)
+        //Declaración de elementos
+        val sound3CV : CardView = findViewById(R.id.sound5)
+        //Ajustar background
+        sound3CV.setBackgroundResource(R.drawable.kirby)
+        //Reproducción de sonido cuando se presiona CV
+        //Reproducción de sonido cuando se presiona CV
+        sound3CV.setOnClickListener{
+            if (mediaPlayer5!!.isPlaying){
+                mediaPlayer5?.pause()
+                mediaPlayer5?.seekTo(0)
+            }
+            else{
+                mediaPlayer5?.start()
+            }
+        }
+    }
+
+    private fun setCard6(){
+        //Declarar MediaPlayer
+        var mediaPlayer6: MediaPlayer? = MediaPlayer.create(this, R.raw.ftsimout)
+        //Declaración de elementos
+        val sound4CV : CardView = findViewById(R.id.sound6)
+        //Ajustar background
+        sound4CV.setBackgroundResource(R.drawable.fts)
+        //Reproducción de sonido cuando se presiona CV
+        sound4CV.setOnClickListener{
+            if (mediaPlayer6!!.isPlaying){
+                mediaPlayer6?.pause()
+                mediaPlayer6?.seekTo(0)
+            }
+            else{
+                mediaPlayer6?.start()
             }
         }
     }
