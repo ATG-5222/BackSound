@@ -95,21 +95,11 @@
                             android:text="Necoarc"
                             android:textStyle="bold"
                             android:textAlignment="center"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textSize="18sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
-                <Button
-                    android:id="@+id/sound1Stop"
-                    style="@style/Widget.MaterialComponents.Button.Icon"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:background="@color/black"
-                    android:gravity="center"
-                    android:textSize="12sp"
-                    app:icon="@android:drawable/ic_media_stop"></Button>
 
                 <Space
                     android:layout_width="1dp"
@@ -143,28 +133,16 @@
                             android:text="Desaparecer"
                             android:textStyle="bold"
                             android:textAlignment="center"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textSize="18sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <Button
-                    android:id="@+id/sound2Stop"
-                    style="@style/Widget.MaterialComponents.Button.Icon"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:background="@color/black"
-                    android:gravity="center"
-                    android:textSize="12sp"
-                    app:icon="@android:drawable/ic_media_stop"></Button>
-
             </LinearLayout>
-
 
         </LinearLayout>
 
     </ScrollView>
-
 
 </RelativeLayout>
