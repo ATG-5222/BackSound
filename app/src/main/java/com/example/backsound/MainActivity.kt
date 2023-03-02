@@ -1,7 +1,6 @@
 package com.example.backsound
 
 import android.media.MediaPlayer
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.cardview.widget.CardView
@@ -16,6 +15,8 @@ class MainActivity : AppCompatActivity() {
         setCard4()
         setCard5()
         setCard6()
+        setCard7()
+        setCard8()
     }
     //////////////
 
@@ -131,6 +132,44 @@ class MainActivity : AppCompatActivity() {
             }
             else{
                 mediaPlayer6?.start()
+            }
+        }
+    }
+
+    private fun setCard7(){
+        //Declarar MediaPlayer
+        var mediaPlayer7: MediaPlayer? = MediaPlayer.create(this, R.raw.badumtss)
+        //Declaración de elementos
+        val sound7CV : CardView = findViewById(R.id.sound7)
+        //Ajustar background
+        sound7CV.setBackgroundResource(R.drawable.badumtss)
+        //Reproducción de sonido cuando se presiona CV
+        sound7CV.setOnClickListener{
+            if (mediaPlayer7!!.isPlaying){
+                mediaPlayer7?.pause()
+                mediaPlayer7?.seekTo(0)
+            }
+            else{
+                mediaPlayer7?.start()
+            }
+        }
+    }
+
+    private fun setCard8(){
+        //Declarar MediaPlayer
+        var mediaPlayer8: MediaPlayer? = MediaPlayer.create(this, R.raw.nahpito)
+        //Declaración de elementos
+        val sound8CV : CardView = findViewById(R.id.sound8)
+        //Ajustar background
+        sound8CV.setBackgroundResource(R.drawable.badumtss)
+        //Reproducción de sonido cuando se presiona CV
+        sound8CV.setOnClickListener{
+            if (mediaPlayer8!!.isPlaying){
+                mediaPlayer8?.pause()
+                mediaPlayer8?.seekTo(0)
+            }
+            else{
+                mediaPlayer8?.start()
             }
         }
     }
