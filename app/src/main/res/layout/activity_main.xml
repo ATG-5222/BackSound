@@ -18,9 +18,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/footer"
         tools:layout_editor_absoluteY="1dp">
-        <!-- Imagenes de portada (Tittle + portrait) -->
+        <!-- Imagen de portada -->
         <LinearLayout
-            android:id="@+id/photos"
+            android:id="@+id/logoImage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -31,19 +31,138 @@
                 android:layout_width="wrap_content"
                 android:layout_height="150dp"
                 app:srcCompat="@drawable/logo" />
-
         </LinearLayout>
-        <!-- ScrollView para los botones -->
+
+        <!-- ScrollView para las tarjetas -->
         <ScrollView
             android:id="@+id/botonesScroll"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:paddingBottom="16dp"
             android:gravity="center"
             android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/footer"
+            app:layout_constraintBottom_toTopOf="@+id/navbar"
             app:layout_constraintTop_toBottomOf="@+id/photos">
+            <!-- LinearLayout para las tarjetas dentro del ScrollView -->
+            <LinearLayout
+                android:id="@+id/botonesLineal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+                <!-- Tarjeta 1 - NecoArc -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/necoarc"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_height="match_parent"
+                    android:color="@color/black">
+                    <LinearLayout
+                        android:id="@+id/necoarcGeneral"
+                        android:layout_width="match_parent"
+                        android:paddingLeft="60dp"
+                        android:paddingRight="60dp"
+                        android:layout_height="wrap_content"
+                        android:background="#000000"
+                        android:backgroundTint="#000000"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:id="@+id/necoarcPhoto"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            app:srcCompat="@drawable/necoarc2" />
+                        <LinearLayout
+                            android:id="@+id/necoarcSecondary"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:background="#000000"
+                            android:backgroundTint="#000000"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/necoarcTittle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-smallcaps"
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"
+                                android:text="NecoArc" />
+                            <ProgressBar
+                                android:id="@+id/goodMorningProgressBar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="6dp"
+                                style="@style/CustomProgressBarStyle"
+                                android:max="100"
+                                android:progress="0" />
+                            <LinearLayout
+                                android:id="@+id/goodMorningButtons"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+                                <Button
+                                    android:id="@+id/goodMorningPlayButton"
+                                    android:layout_width="50dp"
+                                    android:layout_height="30dp"
+                                    android:background="@color/buttons"
+                                    android:fontFamily="sans-serif-smallcaps"
+                                    android:text="Play"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="10dp" />
+                                <TextView
+                                    android:id="@+id/goodMorningCurrentTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="5dp"
+                                    android:textColor="#FFFFFF"
+                                    android:text="" />
+                                <TextView
+                                    android:id="@+id/goodMorningTimeLine"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-smallcaps"
+                                    android:padding="2.5dp"
+                                    android:textColor="#FFFFFF"
+                                    android:text="-" />
+                                <TextView
+                                    android:id="@+id/goodMorningTotalTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingRight="5dp"
+                                    android:textColor="#FFFFFF"
+                                    android:text="" />
+                                <Button
+                                    android:id="@+id/goodMorningRestartButton"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:drawableLeft="@drawable/restart_button"
+                                    android:background="@color/buttons"
+                                    android:visibility="gone" />
+                                <Button
+                                    android:id="@+id/goodMorningPauseButton"
+                                    android:layout_width="50dp"
+                                    android:layout_height="30dp"
+                                    android:background="@color/buttons"
+                                    android:text="Pause"
+                                    android:fontFamily="sans-serif-smallcaps"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="10dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp">
+                </Space>
+            </LinearLayout>
         </ScrollView>
+
     </LinearLayout>
 
     <!-- Footer -->
@@ -62,11 +181,12 @@
             android:id="@+id/botonCerrarApp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/closeButton"
+            android:fontFamily="sans-serif-smallcaps"
             android:text="Salir de la aplicación"
-            android:fontFamily="serif-monospace"
+            android:textColor="@color/white"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:background="@color/closeButton"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
