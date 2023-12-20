@@ -13,4 +13,7 @@
     <color name="navbar_background">#1D1C23</color>
     <color name="lightGray">#E4EBF1</color>
 
+    <color name="buttons">#4C0261</color>
+    <color name="closeButton">#AF1111</color>
+
 </resources>
