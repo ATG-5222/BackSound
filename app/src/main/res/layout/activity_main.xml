@@ -92,7 +92,7 @@
                                 android:textSize="18sp"
                                 android:text="NecoArc" />
                             <ProgressBar
-                                android:id="@+id/goodMorningProgressBar"
+                                android:id="@+id/necoarcProgressBar"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:padding="6dp"
@@ -100,13 +100,13 @@
                                 android:max="100"
                                 android:progress="0" />
                             <LinearLayout
-                                android:id="@+id/goodMorningButtons"
+                                android:id="@+id/necoarcButtons"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:orientation="horizontal">
                                 <Button
-                                    android:id="@+id/goodMorningPlayButton"
+                                    android:id="@+id/necoarcPlayButton"
                                     android:layout_width="50dp"
                                     android:layout_height="30dp"
                                     android:background="@color/buttons"
@@ -115,14 +115,14 @@
                                     android:textColor="#FFFFFF"
                                     android:textSize="10dp" />
                                 <TextView
-                                    android:id="@+id/goodMorningCurrentTime"
+                                    android:id="@+id/necoarcCurrentTime"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:paddingLeft="5dp"
                                     android:textColor="#FFFFFF"
                                     android:text="" />
                                 <TextView
-                                    android:id="@+id/goodMorningTimeLine"
+                                    android:id="@+id/necoarcTimeLine"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="sans-serif-smallcaps"
@@ -130,21 +130,21 @@
                                     android:textColor="#FFFFFF"
                                     android:text="-" />
                                 <TextView
-                                    android:id="@+id/goodMorningTotalTime"
+                                    android:id="@+id/necoarcTotalTime"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:paddingRight="5dp"
                                     android:textColor="#FFFFFF"
                                     android:text="" />
                                 <Button
-                                    android:id="@+id/goodMorningRestartButton"
+                                    android:id="@+id/necoarcRestartButton"
                                     android:layout_width="30dp"
                                     android:layout_height="30dp"
                                     android:drawableLeft="@drawable/restart_button"
                                     android:background="@color/buttons"
                                     android:visibility="gone" />
                                 <Button
-                                    android:id="@+id/goodMorningPauseButton"
+                                    android:id="@+id/necoarcPauseButton"
                                     android:layout_width="50dp"
                                     android:layout_height="30dp"
                                     android:background="@color/buttons"
@@ -186,7 +186,7 @@
             android:text="Salir de la aplicación"
             android:textColor="@color/white"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
