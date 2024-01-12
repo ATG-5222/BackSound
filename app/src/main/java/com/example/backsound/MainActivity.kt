@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var handlers: List<Handler>
     private lateinit var runnables: List<Runnable>
     // Estado de reproducción de la cantidad de elementos totales
-    private val isPlayingList: MutableList<Boolean> = MutableList(2) { false }
+    private val isPlayingList: MutableList<Boolean> = MutableList(3) { false }
     // Inicialmente ninguna pista está en reproducción
     private var currentPlayingIndex = -1
     private lateinit var restartButtons: List<Button>
@@ -39,38 +39,45 @@ class MainActivity : AppCompatActivity() {
         // Inicializar listas de elementos de la interfaz de usuario y otros objetos
         mediaPlayerList = listOf(
             MediaPlayer.create(this, R.raw.necoarc),
-            MediaPlayer.create(this, R.raw.thexfiles)
+            MediaPlayer.create(this, R.raw.thexfiles),
+            MediaPlayer.create(this, R.raw.ftsimout)
         )
         playButtons = listOf(
             findViewById(R.id.necoarcPlayButton),
-            findViewById(R.id.xfilesPlayButton)
+            findViewById(R.id.xfilesPlayButton),
+            findViewById(R.id.imoutPlayButton),
         )
         pauseButtons = listOf(
             findViewById(R.id.necoarcPauseButton),
-            findViewById(R.id.xfilesPauseButton)
+            findViewById(R.id.xfilesPauseButton),
+            findViewById(R.id.imoutPauseButton),
         )
         progressBars = listOf(
             findViewById(R.id.necoarcProgressBar),
-            findViewById(R.id.xfilesProgressBar)
+            findViewById(R.id.xfilesProgressBar),
+            findViewById(R.id.imoutProgressBar),
         )
         totalTimeTextViews = listOf(
             findViewById(R.id.necoarcTotalTime),
-            findViewById(R.id.xfilesTotalTime)
+            findViewById(R.id.xfilesTotalTime),
+            findViewById(R.id.imoutTotalTime),
         )
         currentTimeTextViews = listOf(
             findViewById(R.id.necoarcCurrentTime),
-            findViewById(R.id.xfilesCurrentTime)
+            findViewById(R.id.xfilesCurrentTime),
+            findViewById(R.id.imoutCurrentTime),
         )
         restartButtons = listOf(
             findViewById(R.id.necoarcRestartButton),
-            findViewById(R.id.xfilesRestartButton)
+            findViewById(R.id.xfilesRestartButton),
+            findViewById(R.id.imoutRestartButton),
         )
         // Iniciar Handlers
         handlers = List(5) { Handler() }
         // Función para actualizar barra de reproducción
         runnables = List(5) { createRunnable(it) }
         // Configurar listeners para los botones de reproducción
-        for (i in 0 until 2) { //Ciclo dependiendo de la cantidad de elementos
+        for (i in 0 until 3) { //Ciclo dependiendo de la cantidad de elementos
             val mediaPlayer = mediaPlayerList[i]
             val playButton = playButtons[i]
             val pauseButton = pauseButtons[i]
