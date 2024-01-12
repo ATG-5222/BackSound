@@ -12,8 +12,8 @@ import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 
-class MainActivity : AppCompatActivity() {
-
+class MainActivity : AppCompatActivity()
+{
     private lateinit var mediaPlayerList: List<MediaPlayer>
     private lateinit var playButtons: List<Button>
     private lateinit var pauseButtons: List<Button>
@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var handlers: List<Handler>
     private lateinit var runnables: List<Runnable>
     // Estado de reproducción de la cantidad de elementos totales
-    private val isPlayingList: MutableList<Boolean> = MutableList(3) { false }
+    private val isPlayingList: MutableList<Boolean> = MutableList(4) { false }
     // Inicialmente ninguna pista está en reproducción
     private var currentPlayingIndex = -1
     private lateinit var restartButtons: List<Button>
@@ -40,44 +40,51 @@ class MainActivity : AppCompatActivity() {
         mediaPlayerList = listOf(
             MediaPlayer.create(this, R.raw.necoarc),
             MediaPlayer.create(this, R.raw.thexfiles),
-            MediaPlayer.create(this, R.raw.ftsimout)
+            MediaPlayer.create(this, R.raw.ftsimout),
+            MediaPlayer.create(this, R.raw.badumtss),
         )
         playButtons = listOf(
             findViewById(R.id.necoarcPlayButton),
             findViewById(R.id.xfilesPlayButton),
             findViewById(R.id.imoutPlayButton),
+            findViewById(R.id.badumPlayButton),
         )
         pauseButtons = listOf(
             findViewById(R.id.necoarcPauseButton),
             findViewById(R.id.xfilesPauseButton),
             findViewById(R.id.imoutPauseButton),
+            findViewById(R.id.badumPauseButton),
         )
         progressBars = listOf(
             findViewById(R.id.necoarcProgressBar),
             findViewById(R.id.xfilesProgressBar),
             findViewById(R.id.imoutProgressBar),
+            findViewById(R.id.badumProgressBar),
         )
         totalTimeTextViews = listOf(
             findViewById(R.id.necoarcTotalTime),
             findViewById(R.id.xfilesTotalTime),
             findViewById(R.id.imoutTotalTime),
+            findViewById(R.id.badumTotalTime),
         )
         currentTimeTextViews = listOf(
             findViewById(R.id.necoarcCurrentTime),
             findViewById(R.id.xfilesCurrentTime),
             findViewById(R.id.imoutCurrentTime),
+            findViewById(R.id.badumCurrentTime),
         )
         restartButtons = listOf(
             findViewById(R.id.necoarcRestartButton),
             findViewById(R.id.xfilesRestartButton),
             findViewById(R.id.imoutRestartButton),
+            findViewById(R.id.badumRestartButton),
         )
         // Iniciar Handlers
-        handlers = List(5) { Handler() }
+        handlers = List(4) { Handler() }
         // Función para actualizar barra de reproducción
-        runnables = List(5) { createRunnable(it) }
+        runnables = List(4) { createRunnable(it) }
         // Configurar listeners para los botones de reproducción
-        for (i in 0 until 3) { //Ciclo dependiendo de la cantidad de elementos
+        for (i in 0 until 4) { //Ciclo dependiendo de la cantidad de elementos
             val mediaPlayer = mediaPlayerList[i]
             val playButton = playButtons[i]
             val pauseButton = pauseButtons[i]
@@ -188,7 +195,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     //Cerrar la aplicación
-    private fun closeApp(){
+    private fun closeApp() {
         val includeLayout : LinearLayout = findViewById(R.id.footer)
         val closeButton : Button = includeLayout.findViewById(R.id.botonCerrarApp)
         closeButton.setOnClickListener{
